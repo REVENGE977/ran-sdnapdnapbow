@@ -60,17 +60,15 @@ client.on("message", message => {
     setInterval(() => { discoRole(); }, config.ms);
     message.channel.send("```css\nRainbowing...```");
     message.channel.send("Make Sure You Make Role With **Rainbow** Name");
-  } else {
-  }
+  
+  
  
 if(message.content.startsWith(prefix + "stoprainbow")) {
   message.channel.send("I've stopped rainbowing.");
   setTimeout(() => { console.log(process.exit(0)); }, 300);
 } else {
   }
-}
- 
-)
+
 const config = require('./config.json');
 const prefix = config.prefix;
 const roles = config.roleToDisco;
