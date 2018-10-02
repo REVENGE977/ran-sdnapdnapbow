@@ -47,6 +47,7 @@ client.on("message", message => {
   }
  
  if(message.content.startsWith(prefix + "startrainbow")) {
+       if(!message.member.hasPermission('ADMINISTRATOR')) return
    let rainbow = message.guild.roles.find(`name`, "Rainbow");
   //start of create role
   if(!rainbow){
@@ -56,7 +57,6 @@ client.on("message", message => {
         permissions:[]
       })
     }}})
-    if(!message.member.hasPermission('ADMINISTRATOR')) return
     setInterval(() => { discoRole(); }, config.ms);
     message.channel.send("```css\nRainbowing...```");
     message.channel.send("Make Sure You Make Role With **Rainbow** Name");
