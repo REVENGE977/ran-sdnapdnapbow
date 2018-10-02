@@ -67,4 +67,4 @@ const prefix = config.prefix;
 const roles = config.roleToDisco;
 
 
-client.login(config.token)
+client.login(process.env.BOT_TOKEN)
