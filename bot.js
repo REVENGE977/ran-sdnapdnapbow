@@ -45,21 +45,9 @@ client.on("message", message => {
     });
   }
  
- if(message.content.startsWith(prefix + "startrainbow")) {
-      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x: You dont have permissions :x:')
-    setInterval(() => { discoRole(); }, config.ms);
-    message.channel.send("```css\nRainbowing...```");
-    message.channel.send("Make Sure You Make Role With **Rainbow** Name");
-  } else {
-  }
- 
-if(message.content.startsWith(prefix + "stoprainbow")) {
-      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x: You dont have permissions :x:')
-  message.channel.send("I've stopped rainbowing.");
-  setTimeout(() => { console.log(process.exit(0)); }, 300);
-} else {
-  }
-}
+
+
+  } 
  
 )
 const config = require('./config.json');
