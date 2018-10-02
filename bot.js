@@ -34,7 +34,7 @@ console.log('Welcome')
 client.on("message", message => {
   if(!message.member.hasPermission('ADMINISTRATOR')) return;
   
- 
+ const config = require('./config.json');
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
@@ -69,7 +69,6 @@ if(message.content.startsWith(prefix + "stoprainbow")) {
 } else {
   }
 
-const config = require('./config.json');
 const prefix = config.prefix;
 const roles = config.roleToDisco;
 
