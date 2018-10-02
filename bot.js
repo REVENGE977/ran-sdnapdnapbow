@@ -39,12 +39,14 @@ client.on("message", message => {
     roles.forEach((role) => {
       let theRole = message.guild.roles.find("name", role);
       if(!theRole) return;
+      setInterval(() => { discoRole(); }, config.ms);
       theRole.edit({color: random}).catch(e => {
         return;
       });
     });
   }
  
+
 
   } 
  
