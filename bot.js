@@ -34,6 +34,7 @@ console.log('Welcome')
 client.on("message", message => {
   if(!message.member.hasPermission('ADMINISTRATOR')) return;
   
+ 
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
@@ -46,31 +47,24 @@ client.on("message", message => {
   }
  
  if(message.content.startsWith(prefix + "startrainbow")) {
-       if(!message.member.hasPermission('ADMINISTRATOR')) return
-   let rainbow = message.guild.roles.find(`name`, "Rainbow");
-  //start of create role
-  if(!rainbow){
-         rainbow =  message.guild.createRole({
-        name: "rainbow",
-        color: "#000000",
-        permissions:[]
-      })
-    }}})
- const config = require('./config.json');
+    if(!message.member.hasPermission('ADMINISTRATOR')) return
     setInterval(() => { discoRole(); }, config.ms);
     message.channel.send("```css\nRainbowing...```");
     message.channel.send("Make Sure You Make Role With **Rainbow** Name");
-  
-  
+  } else {
+  }
  
 if(message.content.startsWith(prefix + "stoprainbow")) {
   message.channel.send("I've stopped rainbowing.");
   setTimeout(() => { console.log(process.exit(0)); }, 300);
 } else {
   }
-
+}
+ 
+)
+const config = require('./config.json');
 const prefix = config.prefix;
 const roles = config.roleToDisco;
 
 
-client.login(process.env.BOT_TOKEN)
+client.login(config.token)
