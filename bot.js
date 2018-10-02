@@ -34,7 +34,6 @@ console.log('Welcome')
 client.on("message", message => {
   if(!message.member.hasPermission('ADMINISTRATOR')) return;
   
- const config = require('./config.json');
   function discoRole() {
     let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     roles.forEach((role) => {
@@ -57,6 +56,7 @@ client.on("message", message => {
         permissions:[]
       })
     }}})
+ const config = require('./config.json');
     setInterval(() => { discoRole(); }, config.ms);
     message.channel.send("```css\nRainbowing...```");
     message.channel.send("Make Sure You Make Role With **Rainbow** Name");
